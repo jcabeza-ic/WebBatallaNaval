@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.tableros {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    margin: auto;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.cell.ship {
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    margin: 0%;
+}
+
+.cell.hit {
+    background-color: red;
+}
+
+.cell.miss {
+    background-color: white;
+}
+
+.cell.hover {
+    background-color: lightgreen;
+}
+
+.ship-container {
+    margin-bottom: 20px;
+}
+
+.ship {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    background-color: gray;
+    color: white;
+    cursor: grab;
+    border: 1px solid black;
+}
+
+#startGame {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#startGame:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#status {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#enemyBoard {
+    display: none; /* Oculto inicialmente */
+}
+
+#enemyBoard.show {
+    display: grid; /* Mostrar como grid cuando se active */
+}
+
+/* 🔹 Ajustar la posición de los tableros cuando comienza el juego */
+.tableros.game-start {
+    display: flex;
+    flex-direction: row;  /* Alinear tableros en fila */
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+/* 🔹 Definir tamaños de los tableros para que se vean bien */
+.board {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: 2px solid black;
+    background-color: #ddd;
+
+}
+
+
+#shipContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ship-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #eee;
+    width: fit-content;
+    margin: auto;
+}
+
+
+.ship-container.vertical {
+    flex-direction: column;
+}
+
+.ship-part {
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    border: 1px solid black;
+}
+
+.ship-container {
+    display: flex;
+    flex-direction: row; /* 🔹 Por defecto, los barcos son horizontales */
+    gap: 2px;
+}
+
+.ship-container.vertical {
+    flex-direction: column; /* 🔹 Cuando se roten, se verán en vertical */
+}
+
+#enemyBoardContainer {
+    display: none;
+}
+
+.highlight-valid {
+    background-color: rgba(0, 255, 0, 0.5); /* Verde semitransparente para posiciones válidas */
+    background-color: rgba(240, 89, 78, 0.856);
+}
+
+.highlight-invalid {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo semitransparente para posiciones inválidas */
+}
+
+.cell.highlight {
+    background-color: rgba(0, 0, 255, 0.3); /* Azul translúcido */
+}
+
+.highlight {
+    background-color: rgba(0, 255, 0, 0.5); /* Verde semitransparente */
+}
+
+
